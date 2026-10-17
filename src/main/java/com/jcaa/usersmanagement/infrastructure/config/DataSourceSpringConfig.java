@@ -52,6 +52,7 @@ public class DataSourceSpringConfig {
     hikariConfig.setMaximumPoolSize(10);
     hikariConfig.setMinimumIdle(2);
     hikariConfig.setConnectionTimeout(30_000);
+    hikariConfig.setInitializationFailTimeout(-1);
 
     log.info(LOG_DATASOURCE_INIT, dbHost, dbPort);
     return new HikariDataSource(hikariConfig);
